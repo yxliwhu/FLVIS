@@ -71,11 +71,14 @@ catkin_make -j
 2.c Run the demo in two terminals
 
 ```
+(Terminal 1)
+source ~/cat_ws/devel/setup.bash
 roslaunch flvis ss_ipad.launch                  (run flvis + 3D reconstruction)
+(Terminal 2)
 rosrun flvis play_bag_from_ipad ~/corridor_ss/corridor_ss/  (publish RGB-D image messages using ipad+ss dataset)
 
 ```
-2.d Save the reconstructed model using `pcl`. Open the third terminal, and enter `rosservice call /save_map`. The loop closing thread will run saveMapCallback function to perform pcl reconstrcution.
+2.d Save the reconstructed model using `pcl`. Open the third terminal, and enter `rosservice call /save_map`. The loop closing thread will run saveMapCallback function to perform pcl reconstrcution. The result is in '~/cat_ws/src/FLVIS/results/final_model.ply'
 
 2.e Save the reconstructed model using `open3d`. In the second terminal, enter 'q', and the loop closing thread will run save_callback function to perform TSDF reconstrcution. Noticed that, the TSDF reconstruction can only be performed in a small workspace. It will fail in the long tunnel due to the memrory cost.
 
