@@ -108,6 +108,6 @@ Some functions are added to support 3D reconstrcution:
    
     It is to perform TSDF reconstruction. Please control the size of your map, as TSDF consumes lots of memory.
   
-
+You could modify the parameter of the camera in "~/cat_ws/src/FLVIS/launch/ss_ipad/ss_ipad.yaml"
 
 
